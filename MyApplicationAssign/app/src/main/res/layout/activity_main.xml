@@ -90,7 +90,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="다음 액티비티에 전달 할 메세지" />
-            <EditText
+            <com.example.day01ex01.component.MyEventSettedEditText
                 android:id="@+id/editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

@@ -27,16 +27,12 @@ public class MainActivity extends AppCompatActivity {
 
         // activity_main.xml에 정의한 RecyclerView
         recyclerView = findViewById(R.id.recyclerView);
-
-        // itemList 필드에 RecyclerView에 표시될 아이템 데이터를 초기화
-        // 나중에 실제로 ArrayList 객체를 new 연산자로 생성 해야 함.
         itemList = Arrays.asList("Item 1", "Item 2", "Item 3", "Item 4");
 
         // MyAdapter 생성자에 itemList를 전달하여 어댑터가 사용할 데이터를 설정
         adapter = new MyAdapter(itemList);
         // RecyclerView의 레이아웃을 선형으로 설정
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
-        // setLayoutManager 메서드를 사용하여 RecyclerView에 레이아웃 매니저를 설정.
         recyclerView.setLayoutManager(layoutManager);
         // setAdapter 메서드를 사용하여 RecyclerView에 어댑터를 설정.
         // 이로써 RecyclerView는 itemList 데이터를 사용하여 아이템을 표시하게 됨.

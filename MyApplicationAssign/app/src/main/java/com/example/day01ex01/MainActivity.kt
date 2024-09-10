@@ -31,22 +31,21 @@ class MainActivity : AppCompatActivity() {
          * 실제로 아래 이벤트는 출처의 설명과 다르게 동작은 하지만
          */
         val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-        editText.setOnKeyListener(View.OnKeyListener { v, keyCode, event ->
-            if (event.action === KeyEvent.ACTION_DOWN) {
-                if (keyCode == KeyEvent.KEYCODE_ENTER || keyCode == KeyEvent.KEYCODE_ENTER) {
-                    editText.clearFocus()
-                    imm.hideSoftInputFromWindow(editText.getWindowToken(), 0)
-                    return@OnKeyListener true
-                }
-            }
-            false
-        })
+//        editText.setOnKeyListener(View.OnKeyListener { v, keyCode, event ->
+//            if (event.action === KeyEvent.ACTION_DOWN) {
+//                if (keyCode == KeyEvent.KEYCODE_ENTER || keyCode == KeyEvent.KEYCODE_ENTER) {
+//                    editText.clearFocus()
+//                    imm.hideSoftInputFromWindow(editText.getWindowToken(), 0)
+//                    return@OnKeyListener true
+//                }
+//            }
+//            false
+//        })
         editText.setOnFocusChangeListener { view, hasFocus ->
             Log.i("MainActivity",">>>>>>>> ${view} ${hasFocus}");
             if(!hasFocus) {
                 editText.clearFocus();
                 imm.hideSoftInputFromWindow(view.windowToken, 0)
-//                editText.focusㅁㄴ
             }
         }
 

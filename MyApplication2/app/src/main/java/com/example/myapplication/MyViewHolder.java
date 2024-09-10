@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,6 +18,19 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
         // view.findViewById(R.id.item_text)로 itemText 멤버변수 초기화
         // RecyclerView의 각 아이템에 표시될 TextView 참조
         itemText = view.findViewById(R.id.item_text);
+
+        itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int position = getAdapterPosition();
+                if (position != RecyclerView.NO_POSITION) {
+                    // itemList는 어뎁터에 있는데?
+//                    String clickedItem = itemList.get(position);
+                    // 토스트 이벤트 // Long 또는 Short으로 설정할수 있다..
+//                    Toast.makeText(v.getContext(), "Clicked: "+ clickedItem, Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 }
 //RecyclerView의 각 아이템에 대한 뷰 홀더의 역할 수행.
